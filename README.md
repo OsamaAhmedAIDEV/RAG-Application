@@ -10,13 +10,17 @@ This project provides:
 - Dockerfiles for API and UI + docker-compose file
 
 How to run locally:
+```
 1. python -m venv venv
 2. source venv/bin/activate
 3. pip install -r requirements.txt
 4. Start API: uvicorn qa_api:app --reload --port 8000
 5. Start UI: streamlit run streamlit_app.py
-
+```
 Docker Compose:
+```
     docker compose up --build
-
-Default demo API key: demo-key-123 (use X-API-Key header)
+```
+Default demo API key:
+```
+demo-key-123 (use X-API-Key header)
