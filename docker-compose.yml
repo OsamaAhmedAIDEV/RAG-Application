@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: rag_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./index_store:/app/index_store
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: rag_ui
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
